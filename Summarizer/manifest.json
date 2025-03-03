@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "PDF Summarizer",
+  "version": "1.0",
+  "description": "Custom PDF viewer that extracts text and sends it to a Flask backend.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["pdfjs/pdf.js", "pdfjs/pdf.worker.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
